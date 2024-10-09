@@ -3,11 +3,11 @@ from minigrad.nn.layer import Layer
 
 class MLP:
     def __init__(self, n_input, layer_sizes):
-        input = n_input
+        n_in = n_input
         self.layers = []
         for ls in layer_sizes:
-            self.layers.append(Layer(input, ls))
-            input = ls
+            self.layers.append(Layer(n_in, ls))
+            n_in = ls
 
     def __call__(self, x):
         for l in self.layers:
